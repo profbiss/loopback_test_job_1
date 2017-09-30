@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "postgres": {
+    "host": "test-task.c1frs7ppohg5.us-east-1.rds.amazonaws.com",
+    "port": 5432,
+    "url": "postgres://freshleads:Password@test-task.c1frs7ppohg5.us-east-1.rds.amazonaws.com:5432/freshleads",
+    "database": "freshleads",
+    "password": "Password",
+    "name": "postgres",
+    "user": "freshleads",
+    "connector": "postgresql"
+  }
+}

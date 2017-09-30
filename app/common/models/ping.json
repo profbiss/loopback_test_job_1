@@ -1,0 +1,172 @@
+{
+  "name": "Ping",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "buyerid": {
+      "type": "number"
+    },
+    "partnerid": {
+      "type": "number",
+      "required": true
+    },
+    "contractid": {
+      "type": "number",
+      "required": true
+    },
+    "campaignid": {
+      "type": "number"
+    },
+    "expirestime": {
+      "type": "date"
+    },
+    "price": {
+      "type": "number"
+    },
+    "margin": {
+      "type": "number"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "request": {
+      "type": "object",
+      "required": true,
+      "postgresql": {
+        "dataType": "json"
+      }
+    },
+    "response": {
+      "type": "object",
+      "required": true,
+      "postgresql": {
+        "dataType": "json"
+      }
+    },
+    "createdat": {
+      "type": "date"
+    },
+    "updatedat": {
+      "type": "date"
+    },
+    "verticalid": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "random": {
+      "accepts": [],
+      "returns": [
+        {
+          "type": [
+            "Ping"
+          ],
+          "root": true
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/random",
+          "verb": "get",
+          "status": 200
+        }
+      ]
+    },
+    "partner_stats": {
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "Number",
+          "required": true
+        }
+      ],
+      "returns": [
+        {
+          "type": "object",
+          "root": true
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/partner_stats/:id",
+          "verb": "get",
+          "status": 200
+        }
+      ]
+    },
+    "partners_stats": {
+      "accepts": [],
+      "returns": [
+        {
+          "type": ["object"],
+          "root": true
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/partners_stats",
+          "verb": "get",
+          "status": 200
+        }
+      ]
+    },
+    "partner_stats_fast": {
+      "accepts": [
+        {
+          "arg": "id",
+          "type": "Number",
+          "required": true
+        }
+      ],
+      "returns": [
+        {
+          "type": "object",
+          "root": true
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/partner_stats_fast/:id",
+          "verb": "get",
+          "status": 200
+        }
+      ]
+    },
+    "partners_stats_fast": {
+      "accepts": [],
+      "returns": [
+        {
+          "type": ["object"],
+          "root": true
+        }
+      ],
+      "description": "",
+      "http": [
+        {
+          "path": "/partners_stats_fast",
+          "verb": "get",
+          "status": 200
+        }
+      ]
+    }
+  }
+}

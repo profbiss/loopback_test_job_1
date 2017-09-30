@@ -1,0 +1,20 @@
+version: '3'
+services:
+  lb: &defaults
+    build: .
+    image: loopback
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    entrypoint: ["lb"]
+  server:
+    <<: *defaults
+    entrypoint: ["node","."]
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    env_file: .env
+  npm:
+    <<: *defaults
+    entrypoint: ["npm"]
